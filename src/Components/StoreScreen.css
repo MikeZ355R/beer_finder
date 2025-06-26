@@ -1,0 +1,50 @@
+/* 
+    Default Store Screen
+*/
+
+.store-screen {
+  height: 80vh;
+  width: 80vw;
+  border-radius: 10px;
+  border: solid 10px rgb(68, 4, 4);
+
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 0px; /* Might Change Later */
+  padding-bottom: 50px;
+
+
+  background-color: #f1f0ff;
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 64px;
+  color: blue;
+}
+
+/* 
+    Exiting Store Screen Button to main page
+*/
+
+.buttonExit {
+  position: relative;
+  top: 1vh;
+  left: 78vw;
+  height: 1vh;
+  width: 1vw;
+  /* border-radius: 10px;
+  border: solid 10px black; */
+  border: none;
+  text-align: auto;
+  opacity: 0.5;
+}
+
+.buttonExit:hover {
+    opacity: 1;
+}
