@@ -1,8 +1,9 @@
 import React, {useState} from "react";
 import styles from "./StoreScreen.css";
 import FrontPageStoreButton from "./StoreLocationButton.js";
+import StoreDisplayRating from "./RatingSystem/StoreDisplayRating.js";
 
-function StoreScreen(){
+function StoreScreen({storeName}){
     const [showStoreScreen, setShowStoreScreen] = useState(false);
     
     const StoreExitButtonOnClick = () => {
@@ -22,13 +23,15 @@ function StoreScreen(){
                 &times;
             </button>
             <h1 style = {{fontSize: "10vh"}}> 
-                Store Name
+                {storeName}
                 <p style = {{fontSize: "5vh"}}>
-                    Rating: (Try to replace with an x out of 5 stars visual)
+                    Address:
                     <br></br>
                     Beers:
                     <br></br>
-                    Address:
+                    Rating (out of X Reviews)
+                    <br></br>
+                    <StoreDisplayRating rating = {3.99}/>
                 </p>
             </h1>
         </div>

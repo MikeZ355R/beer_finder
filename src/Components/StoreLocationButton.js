@@ -8,8 +8,10 @@ function FrontPageStoreButton() {
     const [showStoreScreen, setShowStoreScreen] = useState(false);
     const [showSignUp, setShowSignUp] = useState(false);
     const [showLogin, setShowLogin] = useState(false);
+    const [nameOnButtonClicked, setNameOnButtonClicked] = useState("nameOnButton");
 
-    const StoreButtonOnClick = () => {
+    const StoreButtonOnClick = (specificButton) => {
+        setNameOnButtonClicked(specificButton);
         setShowStoreScreen(true);
     };
 
@@ -23,7 +25,7 @@ function FrontPageStoreButton() {
 
     if(showStoreScreen){
         return(
-            <StoreScreen/>
+            <StoreScreen storeName = {nameOnButtonClicked}/>
         );
     }
 
@@ -41,7 +43,7 @@ function FrontPageStoreButton() {
         <div className = "front-screen">
             <h1 style={{ textAlign: 'left', marginLeft: "1vw", marginTop: "1vh", marginRight: "1vw", marginBottom: "1vh", fontFamily: 'Roboto Mono', fontSize: '64px', color: 'black' }}>
                 Beer Finder
-                <button class = "buttonForLocations" id = "myButton" onClick = {StoreButtonOnClick}>
+                <button class = "buttonForLocations" id = "myButton" onClick = {() => StoreButtonOnClick("I'm a button")}>
                     I'm a button
                 </button>
             </h1>
