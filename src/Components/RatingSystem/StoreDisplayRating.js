@@ -2,8 +2,13 @@ import React from "react";
 import "./StoreDisplayRating.css";
 
 function StoreDisplayRating({rating}) {
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 >= 0.5;
+  let fullStars = Math.floor(rating);
+
+  if (rating % 1 >= 0.75){
+    fullStars += 1;
+  }
+
+  const hasHalfStar = (rating % 1 >= 0.25) && (rating % 1 < 0.75);
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
 
   return (
